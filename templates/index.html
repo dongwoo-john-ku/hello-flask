@@ -1,40 +1,93 @@
-{% extends 'layout.html' %}
- 
-{% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      {% for post in posts %}
-      <article>
-        <hr>
-        <div class="row">
-          <div class="col">
-            <a class="h1" href="#">{{ post.title }}</a>
-            <p class="text-justify">{{ post.content }}</p>
-          </div>
-          <div class="col-md-2 d-flex flex-column">
-            <img class="rounded-circle mx-auto" src="#" data-src="holder.js/64x64" width="64px" height="64px">
-            <p class="text-muted text-center">{{ post.author.username }}</p>
-          </div>
-        </div>
-        <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-      </article>
-      {% endfor %}
-    </div>
+<!DOCTYPE HTML>
 
-    <aside class="col-md-4 my-3">
-      <h2>사이드 바</h2>
-      <ul class="list-group">
-        <li class="list-group-item">사이드바 아이템1</li>
-        <li class="list-group-item">사이드바 아이템2</li>
-        <li class="list-group-item">사이드바 아이템3</li>
-        <li class="list-group-item">사이드바 아이템4</li>
-      </ul>
-    </aside>
-  </div>
-</div>
-{% endblock %}
+<html>
+	<head>
+		<title>OPC UA Demo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{{ url_for('static', filename='js/ie/html5shiv.js') }}"></script><![endif]-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{ url_for('static', filename='css/ie8.css') }}" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="{{ url_for('static', filename='css/ie9.css') }}" /><![endif]-->
+	</head>
+	<body class="landing">
 
-{% block scripts %}
-  <script src=https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js></script>
-{% endblock %}
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="{{ url_for('index') }}">opc ua demo</a></h1>
+				<a href="#nav">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('index') }}">About me</a></li>
+					<li><a href="{{ url_for('index') }}">Brief Manual</a></li>
+					</li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+<!--				<i class="icon fa-bar-chart"></i>-->
+				<h2>Data Presentation website</h2>
+				<p>from PLC to Cloud</p>
+				<ul class="actions">
+					<li><a href="http://localhost:5601/goto/6300ec3bfc3d9edba9ba264cd5843937" target="_blank" class="button big special">dashboard</a></li>
+				</ul>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper style1">
+				<div class="inner">
+					<article class="feature left">
+						<span class="image"><img src= "{{ url_for('static', filename='images/tben.jpg') }}" alt="" /></span>
+						<div class="content">
+							<h2>Factory side Architecture</h2>
+							<p>from Multi-PLCs to UPC UA </p>
+							<ul class="actions">
+								<li>
+									<a href="{{ url_for('index') }}" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article class="feature left">
+						<span class="image"><img src= "{{ url_for('static', filename='images/tben1.jpg') }}" alt="" /></span>
+						<div class="content">
+							<h2>Data Logging Architecture</h2>
+							<p>Logstash, Elasticsearch, Kibana, and Flask</p>
+							<ul class="actions">
+								<li>
+									<a href="{{ url_for('index') }}" class="button alt">More</a>
+								</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Made by John</li>
+						<li>E-mail: <a href="dongwoo.john.ku@gmail.com">dongwoo.john.ku@gmail.com</a>.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+
+
+			<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/util.js') }}"></script>
+			<!--[if lte IE 8]><script src="{{ url_for('static', filename='js//ie/respond.min.js') }}"></script><![endif]-->
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+	</body>
+</html>

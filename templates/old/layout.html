@@ -7,11 +7,8 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-  {% if title %}
-    <title>Flask 블로그 - {{ title }} </title>
-  {% else %}
-    <title>Flask 블로그</title>
-  {% endif %}
+
+    <title>OPC UA Data Demo Web Server</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -29,7 +26,7 @@
   <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="{{ url_for('index') }}">Flask 블로그</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">OPC UA Demo Web Server</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,10 +41,10 @@
           </ul>
 
           <!-- Navbar right side -->
-          <div class="navbar-nav mt-mb-0">
-            <a class="nav-item nav-link" href="{#{ url_for('login') }#}">Login</a>
-            <a class="nav-item nav-link" href="{#{ url_for('registration') }#}">Register</a>
-          </div>
+<!--          <div class="navbar-nav mt-mb-0">-->
+<!--            <a class="nav-item nav-link" href="{#{ url_for('login') }#}">Login</a>-->
+<!--            <a class="nav-item nav-link" href="{#{ url_for('registration') }#}">Register</a>-->
+<!--          </div>-->
         </div>
       </nav>
     </header>
